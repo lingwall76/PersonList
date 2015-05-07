@@ -15,9 +15,9 @@ static NSString * const jobKey = @"job";
 
 @implementation Person
 
-- (id)initWithDictionary:(NSDictionary *)dictionary {
+- (id)initWithDictionary:(NSDictionary *)dictionary {// <-receiving method
     self = [super init];
-    if (self) {
+    if (self) { //always check to see if self exists for this method
         self.imageName = dictionary[imageNameKey];
         self.name = dictionary[nameKey];
         self.phoneNumber = dictionary[phoneNumberKey];
@@ -26,19 +26,20 @@ static NSString * const jobKey = @"job";
     return self;
 }
 
-- (NSDictionary *)personDictionary {
+- (NSDictionary *)personDictionary {//returns a dictionary
     
     NSMutableDictionary *entryDictionary = [NSMutableDictionary new];
     if (self.name) {
         [entryDictionary setObject:self.name forKey:nameKey];
+      //OR better way...  entryDictionary[nameKey] = self.name;
     }
-    if (self.imageName) {
+    if (self.imageName) { // <-if not nil...
         [entryDictionary setObject:self.imageName forKey:imageNameKey];
     }
-    if (self.phoneNumber) {
+    if (self.phoneNumber) { //<-if not nil...
         [entryDictionary setObject:self.phoneNumber forKey:phoneNumberKey];
     }
-    if (self.job) {
+    if (self.job) { //<-if not nil...
         [entryDictionary setObject:self.job forKey:jobKey];
     }
     
