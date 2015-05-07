@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSString *phoneNumber;
 @property (nonatomic, strong) NSString *job;
 
+-(NSDictionary *)personDict;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Person.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+    
+    
+    Person *person = [Person new];
+    person.imageName = @"fish_head.png";
+    person.name = @"Fish head";
+    person.phoneNumber = @"1801450";
+    person.job = @"manager";
+   
+    
+    //[person personDict];
+    //OR to log results to console...
+    NSLog(@"%@", [person personDict]);
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
